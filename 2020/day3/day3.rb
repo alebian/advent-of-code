@@ -1,4 +1,6 @@
-map = File.read('./map.txt').split("\n")
+require '../../helpers'
+
+INPUT = Helpers.read_input
 
 RIGHT = 3
 # DOWN = 1
@@ -13,7 +15,7 @@ trees = 0
 spaces = 0
 
 # Skip the first line and go through each line (we don't need the Y movement for now since it's 1)
-map[1..-1].each do |line|
+INPUT[1..-1].each do |line|
   current_x = (current_x + RIGHT) % line.size
 
   case line[current_x]
@@ -23,4 +25,4 @@ map[1..-1].each do |line|
 end
 
 puts "Spaces seen: #{spaces}"
-puts " Trees seen: #{trees}"
+puts "Trees seen: #{trees}"

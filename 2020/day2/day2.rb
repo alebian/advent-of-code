@@ -1,4 +1,6 @@
-passwords_and_policies = File.read('./passwords.txt').split("\n")
+require '../../helpers'
+
+INPUT = Helpers.read_input
 
 class PasswordWithPolicy
   def initialize(input)
@@ -24,7 +26,7 @@ class PasswordWithPolicy
 end
 
 result =
-  passwords_and_policies
+  INPUT
   .map { |input| PasswordWithPolicy.new(input) }
   .select { |password| password.valid? }
   .count
