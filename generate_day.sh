@@ -36,6 +36,6 @@ end
 
 path = "#{options[:year]}/day#{options[:day]}"
 FileUtils.mkdir_p(path)
-FileUtils.touch("#{path}/day#{options[:day]}.rb")
+FileUtils.touch("#{path}/main.rb")
 FileUtils.touch("#{path}/README.md")
 FileUtils.touch("#{path}/input.txt")
