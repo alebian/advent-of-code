@@ -1,8 +1,8 @@
 module Helpers
   module_function
 
-  def read_input(separator: "\n")
-    read_lines('./input.txt', separator: separator)
+  def read_input(year, day, separator: "\n")
+    read_lines("lib/#{year}/day#{day}/input.txt", separator: separator)
   end
 
   def read_lines(file, separator: "\n")

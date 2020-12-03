@@ -34,8 +34,13 @@ elsif options[:day].nil?
   exit
 end
 
-path = "#{options[:year]}/day#{options[:day]}"
+path = "lib/#{options[:year]}/day#{options[:day]}"
 FileUtils.mkdir_p(path)
-FileUtils.touch("#{path}/main.rb")
 FileUtils.touch("#{path}/README.md")
 FileUtils.touch("#{path}/input.txt")
+File.open("#{path}/main.rb", 'a+') do |file|
+  file.puts("require_relative '../../helpers'")
+  file.puts("\n")
+  file.puts("INPUT = Helpers.read_input(#{options[:year]}, #{options[:day]})")
+  file.puts("")
+end

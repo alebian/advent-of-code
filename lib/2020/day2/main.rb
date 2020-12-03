@@ -1,6 +1,6 @@
-require '../../helpers'
+require_relative '../../helpers'
 
-INPUT = Helpers.read_input
+INPUT = Helpers.read_input(2020, 2)
 
 class PasswordWithPolicy
   def initialize(input)

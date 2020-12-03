@@ -1,6 +1,6 @@
-require '../../helpers'
+require_relative '../../helpers'
 
-INPUT = Helpers.read_input(separator: ',').map(&:to_i)
+INPUT = Helpers.read_input(2019, 2, separator: ',').map(&:to_i)
 
 class IntcodeComputer
   class Instruction
@@ -95,3 +95,7 @@ puts computer.memory[0]
 end
 
 puts 'not found'
+require_relative '../../helpers'
+
+INPUT = Helpers.read_input
+

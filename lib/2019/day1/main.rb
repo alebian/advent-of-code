@@ -1,6 +1,6 @@
-require '../../helpers'
+require_relative '../../helpers'
 
-INPUT = Helpers.read_input.map(&:to_i)
+INPUT = Helpers.read_input(2019, 1).map(&:to_i)
 
 def fuel_required(mass)
   (mass / 3.0).floor - 2

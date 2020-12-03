@@ -1,6 +1,6 @@
-require '../../helpers'
+require_relative '../../helpers'
 
-INPUT = Helpers.read_input.map(&:to_i)
+INPUT = Helpers.read_input(2020, 1).map(&:to_i)
 TARGET = 2020
 
 rest = {}
