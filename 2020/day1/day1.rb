@@ -1,8 +1,8 @@
 require '../../helpers'
 
 INPUT = Helpers.read_input.map(&:to_i)
+TARGET = 2020
 
-target = 2020
 rest = {}
 result = []
 
@@ -12,7 +12,7 @@ INPUT.each do |input|
     result << input
     break
   else
-    rest[target - input] = input
+    rest[TARGET - input] = input
   end
 end
 
