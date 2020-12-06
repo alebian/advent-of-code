@@ -15,6 +15,15 @@ class PasswordWithPolicy
     @range.cover?(number_of_letters)
   end
 
+  def valid2?
+    first_idx = @range.min - 1
+    second_idx = @range.max - 1
+
+    return false if @password[first_idx] == @letter && @password[second_idx] == @letter
+
+    @password[first_idx] == @letter || @password[second_idx] == @letter
+  end
+
   private
 
   def parse_input!(input)
@@ -25,10 +34,18 @@ class PasswordWithPolicy
   end
 end
 
-result =
+result1 =
   INPUT
   .map { |input| PasswordWithPolicy.new(input) }
   .select { |password| password.valid? }
   .count
 
-puts result
+puts result1
+
+result2 =
+  INPUT
+  .map { |input| PasswordWithPolicy.new(input) }
+  .select { |password| password.valid2? }
+  .count
+
+puts result2
